@@ -46,16 +46,16 @@
     characters: encryptionCharacters
   });
 
-  var encryptedKey = 'Race to win';
+  var encryptedKey = 'everything you want is on the other side of fear';
 
   $('input').on('keyup', function(event) {
     if((event.keyCode >= 48 && event.keyCode <= 90) || event.keyCode === 8) {
       if(this.value.toLowerCase() === encryptedKey.toLowerCase()) {
         encryptedMessageFirst.text(function() {
-          return 'Success.  Algorithm is confirmed and valid.';
+          return 'The next 4 events have been chosen.  Time and location details will be left at 39.0198683, -77.1863407';
         }).reveal(4000);
         encryptedMessageSecond.text(function() {
-          return 'Unauthorized use of this engine will result in severe consequences.';
+          return 'Our mark ">>" will be nearby.';
         }).reveal(4000);
       } else {
         encryptedMessageFirst.once('encryptionCharacters');
