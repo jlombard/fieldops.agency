@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrivenerProject Version="1.5" Creator="SCRMAC-2.8.1-26322" Device="Joes-MacBook-Pro-2" Modified="2017-01-24 16:37:01 -0500" ModID="685F298A-B947-43D4-895F-81473FC16A50">
+    <Binder>
+        <BinderItem ID="0" UUID="15932419-FBBA-4665-A599-E7035C2E0E0F" Type="DraftFolder" Created="2016-12-27 21:09:52 -0500" Modified="2016-12-30 13:41:26 -0500">
+            <Title>Monsters and Gods</Title>
+            <CorkboardAndOutliner>
+                <SelectedSubdocumentIDs>18</SelectedSubdocumentIDs>
+            </CorkboardAndOutliner>
+            <Children>
+                <BinderItem ID="8" UUID="8479C60C-A79D-4F62-BDE9-F437F6763AF1" Type="Text" Created="2016-12-27 22:26:05 -0500" Modified="2017-01-24 08:47:13 -0500">
+                    <Title>Calendar </Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>572,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="32" UUID="4A2FAB57-FA79-4E82-A530-71444D293C8A" Type="Folder" Created="2016-12-31 08:04:06 -0500" Modified="2017-01-11 18:18:05 -0500">
+                    <Title>Invitations</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="31" UUID="9A535916-BA9F-4987-8EDC-5BD8995EF0DF" Type="Text" Created="2016-12-31 08:03:47 -0500" Modified="2017-01-02 08:38:59 -0500">
+                            <Title>Rendesvous Invitations</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonLocation</FieldID>
+                                        <Value>philips collection</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonParticipant</FieldID>
+                                        <Value>Besties
+Host</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonEndDate</FieldID>
+                                        <Value>Day 0</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonStartDate</FieldID>
+                                        <Value>Day 0</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Nietzsche quotes</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonArc</FieldID>
+                                        <Value>The Philips Collection</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>441,0</TextSelection>
+                            </TextSettings>
+                            <Children>
+                                <BinderItem ID="37" UUID="37E125DE-569A-463D-AD67-6F381D97A563" Type="Text" Created="2016-12-31 09:51:56 -0500" Modified="2017-01-04 13:16:39 -0500">
+                                    <Title>Meet</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                        <CustomMetaData>
+                                            <MetaDataItem>
+                                                <FieldID>aeonLocation</FieldID>
+                                                <Value>philips collection</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonParticipant</FieldID>
+                                                <Value>Hero (Rosey)
+Besties</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonEndDate</FieldID>
+                                                <Value>Day 28</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonStartDate</FieldID>
+                                                <Value>Day 28</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonNewEntityType</FieldID>
+                                                <Value>Nietzsche Quote</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonArc</FieldID>
+                                                <Value>The Philips Collection</Value>
+                                            </MetaDataItem>
+                                        </CustomMetaData>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>267,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="34" UUID="309252E6-A3FE-476D-BD47-014EA24CE459" Type="Text" Created="2016-12-31 09:49:00 -0500" Modified="2017-01-04 13:16:53 -0500">
+                                    <Title>Wine</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                        <CustomMetaData>
+                                            <MetaDataItem>
+                                                <FieldID>aeonParticipant</FieldID>
+                                                <Value>Hero (Rosey)
+Besties</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonEndDate</FieldID>
+                                                <Value>Day 29</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonNewEntityType</FieldID>
+                                                <Value>Nietzsche Quote</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonStartDate</FieldID>
+                                                <Value>Day 29</Value>
+                                            </MetaDataItem>
+                                        </CustomMetaData>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>795,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="35" UUID="F9311689-DDBD-4B5E-8D4B-7395DE4072EA" Type="Text" Created="2016-12-31 09:49:43 -0500" Modified="2017-01-04 13:16:57 -0500">
+                                    <Title>Route</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                        <CustomMetaData>
+                                            <MetaDataItem>
+                                                <FieldID>aeonParticipant</FieldID>
+                                                <Value>Hero (Rosey)
+Besties</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonNewEntityType</FieldID>
+                                                <Value>Nietzsche Quote</Value>
+                                            </MetaDataItem>
+                                        </CustomMetaData>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>346,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="36" UUID="00112EE9-D0BE-4C45-9322-5C1D6FA8E10B" Type="Text" Created="2016-12-31 09:51:34 -0500" Modified="2017-01-04 13:17:01 -0500">
+                                    <Title>Pet</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                        <CustomMetaData>
+                                            <MetaDataItem>
+                                                <FieldID>aeonParticipant</FieldID>
+                                                <Value>Hero (Rosey)
+Besties</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonNewEntityType</FieldID>
+                                                <Value>Nietzsche Quote</Value>
+                                            </MetaDataItem>
+                                        </CustomMetaData>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>613,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="38" UUID="BC3E1354-41C3-4FBF-85A4-721AD66372CB" Type="Text" Created="2016-12-31 09:52:07 -0500" Modified="2017-01-04 13:17:06 -0500">
+                                    <Title>worth</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                        <CustomMetaData>
+                                            <MetaDataItem>
+                                                <FieldID>aeonParticipant</FieldID>
+                                                <Value>Hero (Rosey)
+Besties</Value>
+                                            </MetaDataItem>
+                                            <MetaDataItem>
+                                                <FieldID>aeonNewEntityType</FieldID>
+                                                <Value>Nietzsche Quote</Value>
+                                            </MetaDataItem>
+                                        </CustomMetaData>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>459,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                            </Children>
+                        </BinderItem>
+                        <BinderItem ID="33" UUID="D96C15E0-FE5C-4605-9653-09C4F840EA35" Type="Text" Created="2016-12-31 08:06:45 -0500" Modified="2017-01-23 12:21:32 -0500">
+                            <Title>Finale Invitations</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonParticipant</FieldID>
+                                        <Value>Host
+Friends</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonEndDate</FieldID>
+                                        <Value>Day 0</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonStartDate</FieldID>
+                                        <Value>Day 0</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Logic Grid Shreds</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>760,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="26" UUID="538AB192-6AFC-46E7-A85D-EF8E23B1CA2F" Type="Folder" Created="2016-12-30 14:17:04 -0500" Modified="2017-01-10 11:19:00 -0500">
+                    <Title>Enrollment</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="3" UUID="4B78E12B-CF00-4377-8F7C-7737FC784CE5" Type="Text" Created="2016-12-27 21:09:52 -0500" Modified="2017-01-04 13:32:27 -0500">
+                            <Title>Letter From Professor</Title>
+                            <MetaData>
+                                <StatusID>1</StatusID>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <CompileAsIs>Yes</CompileAsIs>
+                                <NotesTextSelection>33,0</NotesTextSelection>
+                                <IconFileName>Front Matter.tiff</IconFileName>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonLocation</FieldID>
+                                        <Value>Home</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonParticipant</FieldID>
+                                        <Value>The Professor</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonEndDate</FieldID>
+                                        <Value>Day 5</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonStartDate</FieldID>
+                                        <Value>Day 5</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Hero’s Cipher</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonArc</FieldID>
+                                        <Value>Enrollment</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="23" UUID="D2E4BF0D-9CA5-4D9B-B3D5-2263D9FAE466" Type="Text" Created="2016-12-29 17:58:55 -0500" Modified="2017-01-06 13:08:48 -0500">
+                            <Title>Text 1</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <IconFileName>Information.tiff</IconFileName>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonParticipant</FieldID>
+                                        <Value>Hero (Rosey)</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonEndDate</FieldID>
+                                        <Value>Day 5</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Hero's Phone</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonStartDate</FieldID>
+                                        <Value>Day 5</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonArc</FieldID>
+                                        <Value>Enrollment</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="41" UUID="8B9B34E7-E210-4775-9F8A-CF1B6BC62166" Type="Text" Created="2017-01-02 08:56:16 -0500" Modified="2017-01-22 08:52:27 -0500">
+                            <Title>First Drop</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <IconFileName>Inbox.tiff</IconFileName>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonLocation</FieldID>
+                                        <Value>The park</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonParticipant</FieldID>
+                                        <Value>Hero (Rosey)</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonEndDate</FieldID>
+                                        <Value>Day 6</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Burner Phone
+Dropbox
+Second half of cipher wheel</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonStartDate</FieldID>
+                                        <Value>Day 6</Value>
+                                    </MetaDataItem>
+                                    <MetaDataItem>
+                                        <FieldID>aeonArc</FieldID>
+                                        <Value>Enrollment</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>88,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="27" UUID="3A4CA67F-7109-41F4-A3C4-B5E33F5B5E33" Type="Folder" Created="2016-12-30 19:59:16 -0500" Modified="2017-01-10 11:19:44 -0500">
+                    <Title>Edith &amp; Marcus</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="5" UUID="7E21A982-5ADD-49FB-9573-B749BBB3F7DD" Type="Text" Created="2016-12-29 07:58:48 -0500" Modified="2017-01-22 08:59:11 -0500">
+                            <Title>First Assignment</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <IconFileName>Information.tiff</IconFileName>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Burner Phone</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>750,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="6" UUID="AC397E2B-3E98-45F6-A701-3A0C6CA29EE0" Type="Text" Created="2016-12-29 08:59:56 -0500" Modified="2017-01-12 13:52:27 -0500">
+                            <Title>Marcus's drop</Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <IconFileName>Inbox.tiff</IconFileName>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>Edith's Ring Leather Scroll Letter from Edith </Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1574,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="28" UUID="F8C734AB-8630-4A8D-8421-DA533965E1D7" Type="Text" Created="2016-12-30 22:43:04 -0500" Modified="2017-01-12 09:47:57 -0500">
+                            <Title>Instructions</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <IconFileName>Information.tiff</IconFileName>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>88,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="29" UUID="73BBF0E4-5C64-4BCF-9AE3-BE2E49229093" Type="Text" Created="2016-12-30 22:47:07 -0500" Modified="2017-01-06 13:15:43 -0500">
+                            <Title>Thank You</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <IconFileName>Information.tiff</IconFileName>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>288,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="30" UUID="50612730-86C6-40DF-8792-B58D78D746BB" Type="Folder" Created="2016-12-30 20:01:33 -0500" Modified="2017-01-10 11:20:09 -0500">
+                    <Title>Learn the situation</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="4" UUID="74EA93EB-42EF-4BC7-B946-40ED404A15ED" Type="Text" Created="2016-12-28 17:02:50 -0500" Modified="2017-01-10 08:56:39 -0500">
+                            <Title>Package From Marcus </Title>
+                            <MetaData>
+                                <PageBreakBefore>Yes</PageBreakBefore>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>383,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="42" UUID="08A0BFE7-FFAC-4B5A-A9AD-D6BF08237F5B" Type="Text" Created="2017-01-03 11:18:13 -0500" Modified="2017-01-05 07:18:21 -0500">
+                            <Title>Letter From Marcus </Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>570,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="44" UUID="7AD53837-1F60-425C-8C5E-F1D15D5EC077" Type="Text" Created="2017-01-05 07:18:51 -0500" Modified="2017-01-13 05:55:16 -0500">
+                            <Title>Marcus' Cache TK</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                                <CustomMetaData>
+                                    <MetaDataItem>
+                                        <FieldID>aeonNewEntityType</FieldID>
+                                        <Value>hat box letters fedora hidden compartment</Value>
+                                    </MetaDataItem>
+                                </CustomMetaData>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>119,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="45" UUID="70E5F6A6-D481-4E26-967F-96F263B21478" Type="Folder" Created="2017-01-06 08:23:25 -0500" Modified="2017-01-06 08:23:25 -0500">
+                            <Title>In The Hat Box</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>0,0</TextSelection>
+                            </TextSettings>
+                            <Children>
+                                <BinderItem ID="46" UUID="618DA027-6166-4FC8-97A5-7F3C4A5FDEC9" Type="Text" Created="2017-01-06 08:24:10 -0500" Modified="2017-01-06 08:28:28 -0500">
+                                    <Title>Letter 1</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>188,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="47" UUID="3DD1F8CB-839E-4A62-9456-8BD8FEFFEB55" Type="Text" Created="2017-01-06 08:29:06 -0500" Modified="2017-01-06 08:32:34 -0500">
+                                    <Title>Letter 2</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>228,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="49" UUID="3E0F0D49-BE76-4D75-9AB3-138B5BCB1E5F" Type="Text" Created="2017-01-06 17:24:55 -0500" Modified="2017-01-10 17:39:42 -0500">
+                                    <Title>Letter 2 - Attachments</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>0,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                                <BinderItem ID="50" UUID="04F64E74-B78C-4438-B699-479482FF960E" Type="Text" Created="2017-01-06 17:40:15 -0500" Modified="2017-01-11 09:18:44 -0500">
+                                    <Title>Letter 3</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                        <NotesTextSelection>0,0</NotesTextSelection>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <TextSelection>223,0</TextSelection>
+                                    </TextSettings>
+                                </BinderItem>
+                            </Children>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="54" UUID="868DDC6B-C37E-4605-8420-E9E63A277B67" Type="Folder" Created="2017-01-10 08:33:51 -0500" Modified="2017-01-10 08:34:00 -0500">
+                    <Title>Intercept Comms</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="60" UUID="16B75258-BA64-4FA2-9822-74B00F40B81D" Type="Text" Created="2017-01-10 11:20:24 -0500" Modified="2017-01-22 08:58:25 -0500">
+                            <Title>Handler directs</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>622,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="64" UUID="E1FF1A52-042F-41B8-B5B4-7A03D3E5C0BF" Type="Text" Created="2017-01-12 11:49:27 -0500" Modified="2017-01-22 10:09:37 -0500">
+                            <Title>Intercepted communications</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>369,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="69" UUID="CC15E757-19B3-4896-A9D9-2FFAD4E89E7B" Type="Text" Created="2017-01-22 09:52:04 -0500" Modified="2017-01-22 10:00:32 -0500">
+                            <Title>Encryption engine hacked</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>185,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="70" UUID="78F31125-A244-4F4A-9B48-CE400EC533DA" Type="Text" Created="2017-01-22 09:59:51 -0500" Modified="2017-01-22 10:06:45 -0500">
+                            <Title>Encryption key from Marcus</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>320,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="57" UUID="4C815C4B-C91B-4842-80DD-189BFB46D72C" Type="Folder" Created="2017-01-10 08:37:08 -0500" Modified="2017-01-22 10:48:49 -0500">
+                    <Title>Lay a trap</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="58" UUID="31C5DCA8-10B5-42A2-B300-16392FE14D24" Type="Folder" Created="2017-01-10 08:37:15 -0500" Modified="2017-01-10 08:37:23 -0500">
+                    <Title>Capture enemy agent</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="59" UUID="C3C810B3-6A97-4773-9DD6-B8FFC61F6F4E" Type="Folder" Created="2017-01-10 08:37:28 -0500" Modified="2017-01-10 08:37:43 -0500">
+                    <Title>Disrupt!</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="7" UUID="D52847AF-C18E-45B8-9317-A84D7DA038F2" Type="Text" Created="2016-12-28 08:24:15 -0500" Modified="2017-01-02 22:44:42 -0500">
+                    <Title>Second Assignment </Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>654,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="14" UUID="E379FE58-DDC5-4752-B1E1-F70D8A326E6E" Type="Text" Created="2016-12-29 12:40:00 -0500" Modified="2016-12-29 12:53:58 -0500">
+                    <Title>Invitation </Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>299,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="15" UUID="123EE0EE-E900-4A68-967D-B83BB56B0E5B" Type="Text" Created="2016-12-29 12:54:36 -0500" Modified="2017-01-23 11:07:51 -0500">
+                    <Title>FieldOps.Agency</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>471,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="43" UUID="AB910661-C6D1-4D12-91FD-3AFC11B8EBB9" Type="Text" Created="2017-01-03 17:53:04 -0500" Modified="2017-01-22 09:46:06 -0500">
+                    <Title>Arc</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>666,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="65" UUID="F2BF783F-BA53-48D5-85C4-ECE47F5B6C4F" Type="Folder" Created="2017-01-17 13:07:47 -0500" Modified="2017-01-17 13:07:47 -0500">
+                    <Title>Logic Puzzle</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="66" UUID="1D949292-40A7-47D2-AFD8-9914B0CC9823" Type="Text" Created="2017-01-17 13:08:29 -0500" Modified="2017-01-17 13:12:57 -0500">
+                            <Title>Overview</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <NotesTextSelection>0,0</NotesTextSelection>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>310,0</TextSelection>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="67" UUID="5D26AD6C-ACE4-492C-9B04-9E530690313A" Type="Text" Created="2017-01-17 13:52:35 -0500" Modified="2017-01-23 19:59:08 -0500">
+                    <Title>Da gifted One</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="1" UUID="E499FE88-8C7C-43C2-829A-098BC208E620" Type="ResearchFolder" Created="2016-12-27 21:09:52 -0500" Modified="2016-12-27 21:09:52 -0500">
+            <Title>Research</Title>
+            <Children>
+                <BinderItem ID="10" UUID="F9ECFA65-183A-4565-B7B6-83041607A102" Type="Text" Created="2016-12-29 11:28:36 -0500" Modified="2017-01-20 11:05:23 -0500">
+                    <Title>Artifacts</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                        <IconFileName>To Do.tiff</IconFileName>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="51" UUID="F36DC1CE-6D4C-4771-A7D9-E3A6E75D4ADC" Type="Text" Created="2017-01-09 08:28:30 -0500" Modified="2017-01-19 16:57:43 -0500">
+                    <Title>Party Details</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>620,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="11" UUID="76703A08-235A-44B1-B978-BFA4BE896E4D" Type="Text" Created="2016-12-29 11:30:22 -0500" Modified="2017-01-10 11:33:35 -0500">
+                    <Title>Final Puzzle</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>69,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="12" UUID="B0D074C2-AB91-4DB5-907D-4DB9B228FC73" Type="Text" Created="2016-12-29 11:31:28 -0500" Modified="2017-01-06 09:12:47 -0500">
+                    <Title>Web Links</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>926,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="9" UUID="463FF06C-0119-4730-84CF-E0EB3683B168" Type="Text" Created="2016-12-27 21:10:46 -0500" Modified="2016-12-29 11:32:53 -0500">
+                    <Title>Notes </Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1334,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="13" UUID="84D30F99-54A3-4415-9F66-C78C503E91A8" Type="Text" Created="2016-12-29 11:35:01 -0500" Modified="2017-01-11 19:07:07 -0500">
+                    <Title>Opportunities for friends</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>718,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="16" UUID="A9E1B779-ABAD-4C80-9252-AAF7F5C3C173" Type="Text" Created="2016-12-29 13:23:48 -0500" Modified="2016-12-29 16:41:22 -0500">
+                    <Title>Channels of communication</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>497,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="19" UUID="AA912027-BE4B-41D7-8753-BB584C3AE7DD" Type="Text" Created="2016-12-29 15:28:45 -0500" Modified="2017-01-12 17:27:33 -0500">
+                    <Title>Characters </Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>506,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="24" UUID="E00EF8EB-5F11-4498-99E6-3CD4B3976C95" Type="Text" Created="2016-12-29 17:01:15 -0500" Modified="2016-12-29 17:08:05 -0500">
+                    <Title>Loose Ends</Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>85,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="25" UUID="BEA30C2D-F252-470C-BD2F-2F2C83D644EB" Type="Text" Created="2016-12-29 23:11:10 -0500" Modified="2017-01-13 12:00:22 -0500">
+                    <Title>Game Elements </Title>
+                    <MetaData>
+                        <PageBreakBefore>Yes</PageBreakBefore>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>884,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="61" UUID="A17E8C23-3485-42E0-BE20-E1975F7E0BBF" Type="Text" Created="2017-01-10 13:05:42 -0500" Modified="2017-01-10 13:25:54 -0500">
+                    <Title>Logos</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>207,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="39" UUID="DB395E07-109A-43E0-9CCC-A4B35DF116CD" Type="Text" Created="2016-12-31 15:45:52 -0500" Modified="2017-01-22 09:49:36 -0500">
+                    <Title>Acknowledgements</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>298,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="63" UUID="E22550D1-981D-4CB4-9DA2-AC6F8982B8E6" Type="Text" Created="2017-01-11 19:07:24 -0500" Modified="2017-01-11 22:01:36 -0500">
+                    <Title>Video!</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>249,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="2" UUID="9083CD44-987E-409A-951D-792E93A43701" Type="TrashFolder" Created="2016-12-27 21:09:52 -0500" Modified="2016-12-27 21:09:52 -0500">
+            <Title>Trash</Title>
+        </BinderItem>
+        <BinderItem ID="62" UUID="CD4C05A2-73F9-4DF7-BC69-7F32A3C8E602" Type="Text" Created="2017-01-10 13:00:36 -0500" Modified="2017-01-11 09:20:10 -0500">
+            <Title>Review Checklist</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+                <NotesTextSelection>0,0</NotesTextSelection>
+            </MetaData>
+            <TextSettings>
+                <TextSelection>360,0</TextSelection>
+            </TextSettings>
+        </BinderItem>
+    </Binder>
+    <Collections>
+        <Collection Type="Binder" ID="A8615FD6-64F0-4410-85CC-9375CCFC414F" Color="0.962266 0.962266 0.962266">
+            <Title>Binder</Title>
+        </Collection>
+        <Collection Type="RecentSearch" ID="BCCC2ACD-226A-49D2-8D62-A4BBB58D6E1D" Color="0.922 0.91 0.98">
+            <Title>Search Results</Title>
+        </Collection>
+    </Collections>
+    <LabelSettings>
+        <Title>Label</Title>
+        <DefaultLabelID>-1</DefaultLabelID>
+        <Labels>
+            <Label ID="-1">No Label</Label>
+            <Label ID="0" Color="1.0 0.76 0.78">Red</Label>
+            <Label ID="1" Color="1.0 0.83 0.71">Orange</Label>
+            <Label ID="2" Color="1.0 0.91 0.71">Yellow</Label>
+            <Label ID="3" Color="0.76 0.95 0.75">Green</Label>
+            <Label ID="4" Color="0.75 0.91 0.98">Blue</Label>
+            <Label ID="5" Color="0.97 0.82 1.0">Purple</Label>
+        </Labels>
+    </LabelSettings>
+    <StatusSettings>
+        <Title>Status</Title>
+        <DefaultStatusID>-1</DefaultStatusID>
+        <StatusItems>
+            <Status ID="-1">No Status</Status>
+            <Status ID="0">To Do</Status>
+            <Status ID="1">First Draft</Status>
+            <Status ID="2">Revised Draft</Status>
+            <Status ID="3">Final Draft</Status>
+            <Status ID="4">Done</Status>
+        </StatusItems>
+    </StatusSettings>
+    <CustomMetaDataSettings>
+        <MetaDataField ID="aeonStartDate" Wraps="No">Event Start Date</MetaDataField>
+        <MetaDataField ID="aeonEndDate" Wraps="No">Event End Date</MetaDataField>
+        <MetaDataField ID="aeonArc" Wraps="Yes">Event Arc</MetaDataField>
+        <MetaDataField ID="aeonLocation" Wraps="Yes">Event Location</MetaDataField>
+        <MetaDataField ID="aeonParticipant" Wraps="Yes">Event Participant</MetaDataField>
+        <MetaDataField ID="aeonNewEntityType" Wraps="Yes">Event Artifacts</MetaDataField>
+    </CustomMetaDataSettings>
+    <ProjectProperties>
+        <ProjectTitle></ProjectTitle>
+        <AbbreviatedTitle></AbbreviatedTitle>
+        <FullName></FullName>
+        <LastName></LastName>
+        <FirstName></FirstName>
+    </ProjectProperties>
+    <ProjectTargets Notify="No">
+        <DraftTarget Type="Words" CountIncludedOnly="No" CurrentCompileGroupOnly="No" Deadline="2016-12-29 11:17:01 -0500" IgnoreDeadline="Yes">0</DraftTarget>
+        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="No" ResetType="Midnight" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
+        <PreviousSession Words="0" Characters="0" Date="2017-01-24 16:34:54 -0500"></PreviousSession>
+    </ProjectTargets>
+    <Favorites>
+        <BinderID>9</BinderID>
+    </Favorites>
+    <PrintSettings PaperSize="612.0,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+    <UserProjectData>
+        <AeonTimeline>
+            <UniqueSyncId>7A9DB09C-F564-4A74-89C4-FC8C182531F5</UniqueSyncId>
+            <LastSyncDate>2017-01-02 17:54:38 +0000</LastSyncDate>
+            <AeonSyncDate></AeonSyncDate>
+        </AeonTimeline>
+    </UserProjectData>
+</ScrivenerProject>
