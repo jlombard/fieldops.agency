@@ -52,7 +52,7 @@
     if((event.keyCode >= 48 && event.keyCode <= 90) || event.keyCode === 8) {
       if(this.value.toLowerCase() === encryptedKey.toLowerCase()) {
         encryptedMessageFirst.text(function() {
-          return 'The next 4 events have been chosen.  Time and location details will be left at 39.0198683, -77.1863407';
+          return 'The next 4 events have been chosen.  Time and location details will be left at 38.990100, -77.097209';
         }).reveal(4000);
         encryptedMessageSecond.text(function() {
           return 'Our mark ">>" will be nearby.';
