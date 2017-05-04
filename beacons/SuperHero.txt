@@ -1,0 +1,19 @@
+{
+ "name":"Beacon 1",
+ "uuid":"B9407F30-F5F8-466E-AFF9-25556B57FE6A",
+ "major_id":"22000",
+ "minor_id":"00001",
+}
+
+{
+ "name":"Beacon 2",
+ "uuid":"B9407F30-F5F8-466E-AFF9-25556B57FE6B",
+ "major_id":"22000",
+ "minor_id":"00002",
+}
+{
+ "name":"Beacon 3",
+ "uuid":"B9407F30-F5F8-466E-AFF9-25556B57FE6C",
+ "major_id":"22000",
+ "minor_id":"00003",
+}
