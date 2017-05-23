@@ -1,0 +1,21 @@
+{
+ "name":"Beacon 1",
+ "uuid":"2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6",
+ "major_id”:”22”,
+ "minor_id":"1",
+ “disable_message”:”You are very close.  You’ll need to rely on your eyes from here. <p/>It appears this weapon is protected by an encryption device.  Once you’ve found it, you’ll need to try and disable it”,
+ “disable_cta”:”Attempt to disable”,
+
+ “disable_link”:”https://www.google.com/search?q=disable+beacon+1”,
+}
+
+{
+ "name":"Beacon 2",
+ "uuid":"B9407F30-F5F8-466E-AFF9-25556B57FE6B",
+ "major_id":"22",
+ "minor_id":"2",
+ “disable_message”:”This weapon is protected by an encryption device.”,
+ “disable_cta”:”Attempt to disable”,
+ “disable_link”:”https://www.google.com/search?q=disable+beacon+2”,
+}
+
