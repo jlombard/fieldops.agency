@@ -6,7 +6,7 @@
 		"major_id" : "22",
  		"minor_id" : "1",
 		"found_image" : "http://fieldops.agency/beacons/2.jpg",
-		"disarm_url" : "https://www.google.com/search?q=disable+beacon+2"
+		"disarm_url" : "http://fieldops.agency/ee/44-22/38.786-76.216/?22=99"
 	  },
 	  {
  		"name" : "Beacon 2",
@@ -14,7 +14,7 @@
  		"major_id" : "22",
 		"minor_id" : "2",
 		"found_image" : "http://fieldops.agency/beacons/2.jpg",
-		"disarm_url" : "https://www.google.com/search?q=disable+beacon+2"
+		"disarm_url" : "http://fieldops.agency/ee/46-24/38.786-76.216/"
 	  }
 	]
 }
