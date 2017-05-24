@@ -5,7 +5,7 @@
  		"uuid" : "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6",
 		"major_id" : "22",
  		"minor_id" : "1",
-		"found_image" : "http://fieldops.agency/beacons/2.jpg",
+		"found_image" : "http://fieldops.agency/beacons/gargoyle_found.png",
 		"disarm_url" : "http://fieldops.agency/ee/44-22/38.786-76.216/?22=99"
 	  },
 	  {
@@ -13,7 +13,7 @@
 		"uuid" : "B9407F30-F5F8-466E-AFF9-25556B57FE6B",
  		"major_id" : "22",
 		"minor_id" : "2",
-		"found_image" : "http://fieldops.agency/beacons/2.jpg",
+		"found_image" : "http://fieldops.agency/beacons/skull_found.png",
 		"disarm_url" : "http://fieldops.agency/ee/46-24/38.786-76.216/"
 	  }
 	]
