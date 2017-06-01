@@ -13,7 +13,7 @@
  		"name" : "Beacon 2",
 		"uuid" : "F4E0A857-9EFF-4CA9-9C3A-B9A25E3DA6DC",
  		"major_id" : "22",
-		"minor_id" : "2",
+		"minor_id" : "4",
  		"disable_message" : "This weapon is protected by an encryption device",
  		"disable_cta" : "Attempt to disable",
  		"disable_link" : "http://fieldops.agency/ee/46-24/38.786-76.216/"
