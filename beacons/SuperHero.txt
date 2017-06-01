@@ -2,7 +2,7 @@
 	"beacons": [
 	  {
  		"name" : "Beacon 1",
- 		"uuid" : "B9407F30-F5F8-466E-AFF9-25556B57FE6B",
+ 		"uuid" : "F4E0A857-9EFF-4CA9-9C3A-B9A25E3DA6DC",
 		"major_id" : "22",
  		"minor_id" : "1",
  		"disable_message" : "You are very close.  You’ll need to rely on your eyes from here. It appears this weapon is protected by an encryption device. Once you’ve found it, you’ll need to try and disable it",
@@ -11,7 +11,7 @@
 	  },
 	  {
  		"name" : "Beacon 2",
-		"uuid" : "B9407F30-F5F8-466E-AFF9-25556B57FE6B",
+		"uuid" : "F4E0A857-9EFF-4CA9-9C3A-B9A25E3DA6DC",
  		"major_id" : "22",
 		"minor_id" : "2",
  		"disable_message" : "This weapon is protected by an encryption device",
