@@ -46,7 +46,7 @@
     characters: encryptionCharacters
   });
 
-  var encryptedKey = 'dance with the devil';
+  var encryptedKey = 'dancing with the devil';
 
   $('input').on('keyup', function(event) {
     if((event.keyCode >= 48 && event.keyCode <= 90) || event.keyCode === 8) {
