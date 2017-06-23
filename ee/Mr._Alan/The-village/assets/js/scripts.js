@@ -52,10 +52,10 @@
     if((event.keyCode >= 48 && event.keyCode <= 90) || event.keyCode === 8) {
       if(this.value.toLowerCase() === encryptedKey.toLowerCase()) {
         encryptedMessageFirst.text(function() {
-          return 'are my superhero, today and every day. You save me from my demons and bring light into my life.';
+          return 'are my superhero, today and every day. You save me from my demons and bring light into my life. My world is a better place because of you.';
         }).reveal(4000);
         encryptedMessageSecond.text(function() {
-          return 'My world is a better place because of you. Happy Birthday, Greg. I love you forever. - Yaniv';
+          return 'Happy Birthday, Greg. I love you forever. - Yaniv';
         }).reveal(4000);
       } else {
         encryptedMessageFirst.once('encryptionCharacters');
