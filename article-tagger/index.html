@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        div.container{
+            width: 100%;
+            /*max-width: 1280px;*/
+            margin:0 auto;
+        }
+
+        .row{
+            /*width: 100%;*/
+            overflow: hidden;
+        }
+
+        .question_area{
+            float: left;
+            width: 70%;
+            height: auto;
+        }
+
+        .status_area{
+            float: left;
+            width: 25%;
+            margin-left: 5%;
+        }
+
+        .title-row{
+            padding: 5px;
+            background: #222222;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .title-row h1{
+            font-size: 18px;
+            font-weight:normal;
+            text-align: center;
+        }
+
+        .notification-row{
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        .notification-row.error{
+            background: #FF0000;
+        }
+
+        .notification-row.success{
+            background: #1D9D74;
+        }
+
+        .notification-row.info{
+            background: #4080FF;
+        }
+
+
+        .question-row,
+        .status-title-row{
+            font-size: 14px;
+            padding:5px 20px;
+            background: #eee;
+        }
+
+        .question_area button{
+            padding: 5px;
+            border:none;
+            border-radius: 3px;
+            margin:2px 3px;
+        }
+
+        .question_area .yes{
+            background: #1D9D74;
+
+        }
+
+        .question_area .no{
+            background: #FF0000;
+        }
+
+        .question_area .next{
+            background: #489FDF;
+        }
+
+        .question_area button i{
+            color: #fff;
+        }
+
+        .frame-row{
+            margin-top: 10px;
+
+        }
+
+        .frame-row iframe{
+            width: 100%;
+            height: 100vh;
+        }
+
+        .status-title-row p{
+            padding: 5px 0;
+        }
+
+        .status-list{
+            margin-top: 10px;
+            list-style: none;
+            height: calc(100vh - 90px);
+            overflow: auto;
+            border-top: #ccc solid 1px;
+        }
+
+        .status-list li{
+            padding: 10px;
+            border: #ccc solid 1px;
+            border-top: 0;
+            cursor: pointer;
+            transition: .3s all;
+            position: relative;
+            font-size: 14px;
+
+        }
+
+        .status-list p{
+            position: relative;
+            z-index: 10;
+
+        }
+
+        .status-list li:before{
+            display: inline-block;
+            position: absolute;
+            height: 12px;
+            font-size:10px;
+            color: #fff;
+            text-align: center;
+            transition: all .3s;
+            background: #1D9D74;
+            top: 0;
+            left: 0;
+
+        }
+
+        .status-list li.p-0:before{
+            content: '';
+            width: 0;
+        }
+
+        .status-list li.p-1:before{
+            content: '20%';
+            width: 20%;
+        }
+
+        .status-list li.p-2:before{
+            content: '40%';
+            width: 40%;
+        }
+
+        .status-list li.p-3:before{
+            content: '60%';
+            width: 60%;
+        }
+
+        .status-list li.p-4:before{
+            content: '80%';
+            width: 80%;
+        }
+
+        .status-list li.p-5:before{
+            content: '100%';
+            width: 100%;
+        }
+
+        .status-list li[class*=p-5]{
+            opacity: .8;
+        }
+
+
+        .status-list li:hover,
+        .status-list li.active{
+            padding-left: 20px;
+            border-left-width: 3px;
+            border-left-color: #1D9D74;
+        }
+
+
+
+    </style>
+    <!--<script src="uglify.js"></script>-->
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row notification-row">
+
+        </div>
+        <div class="row title-row">
+            <h1>Article Tagger</h1>
+        </div>
+        <row class="display-row">
+            <div class="question_area">
+                <div class="row question-row">
+                    <!--<p>Test Question ? <button class="yes"><i class="fa fa-check"></i></button> <button class="no"><i class="fa fa-close"></i></button></p>-->
+                </div>
+                <row class="frame-row">
+                    <iframe src="" frameborder="0"></iframe>
+                </row>
+            </div>
+            <div class="status_area">
+                <div class="status-title-row">
+                    <p>School Status</p>
+                </div>
+                <ul class="status-list">
+                    <!--<li class="p-2"><p>dsfsfs</p></li>-->
+                </ul>
+            </div>
+        </row>
+    </div>
+<!--<a href='javascript:(function(){})()' id="bookmarklet">Bookmarklet</a>-->
+</body>
+<script id="bookmarklet_code">
+    var bookmarklet ={
+        rl:5, //review length
+        na:$(".notification-row"),//notification area
+        frm:$("iframe"),//iframe
+        qa:$(".question-row"),
+        nfy: function (show_notification, type, message) { //notify
+            if(!show_notification){
+                $(this.na).slideUp();
+                return;
+            }
+            $(this.na).attr('class','notification-row');
+            if(type=='e'){
+                $(this.na).addClass('error').html(message);
+            }
+
+            if(type=='s'){
+                $(this.na).addClass('success').html(message);
+            }
+
+            if(type=='i'){
+                $(this.na).addClass('info').html(message);
+            }
+            $(this.na).slideDown();
+
+
+        },
+        sar: "https://sheetsu.com/apis/v1.0/a2e6dd9fee4a", //sheet api root
+        sl : [], //school list
+        si : -1, //school index
+        ll : false, // lazy load
+        gsl: function () { //get school list
+            var qs = "";
+            var _this = this;
+            if(!this.rn.s){
+                this.rn['s'] = "";
+            }
+            qs += "ReviewStatus="+this.rn.s;
+            if(this.rn.n && parseInt(this.rn.n)){
+                qs += "&limit="+this.rn.n+"&offset="+$('.status-list li').length;
+            }
+            var url = this.sar+"/search?"+qs;
+//            console.log(url);
+            $.get(url,function (data) {
+               if(!data.error){
+                   _this.nfy(false);
+                   _this.sl = _this.sl.concat(data);
+                   _this.dl();
+                   if(!_this.ll){
+                       setTimeout(function(){
+                           _this.l();
+                       },2000);
+                       _this.ll = true;
+                   }
+
+               }else{
+                   if(!_this.ll){
+                       _this.nfy(true,'e','Sorry, No data found');
+                   }else{
+                       console.log('No data found');
+                   }
+
+
+               }
+
+            });
+        },
+        wp:function (school) { //write progress
+            if(!school.ReviewStatus || !jQuery.isNumeric(school.ReviewStatus)){
+                school.ReviewStatus = 0;
+            }
+            $('#'+school.UnitID).attr('class','').addClass('p-'+school.ReviewStatus);
+        },
+        dl:function () {//display list
+            var _this = this;
+            var dl_area = $(".status-list");
+            for(var i=0; i<this.sl.length; i++){
+                var li = $('<li>');
+                li.attr(
+                    {
+                        'id':this.sl[i].UnitID,
+                        'data-index':i
+                    }
+                ).text(this.sl[i].Name)
+                    .click(function (e) {
+                        _this.si = parseInt($(this).attr('data-index'))-1;
+                        _this.cs.ReviewStatus = parseInt(_this.cs.ReviewStatus==_this.rl)?_this.cs.ReviewStatus : 'incomplete';
+                        _this.scsr();
+                        _this.cs = null;
+                        _this.nfy(false);
+                        _this.l();
+                    });
+
+                dl_area.append(li);
+                this.wp(this.sl[i]);
+            }
+
+        },
+        cs : null, // current school
+        sr : [], //search result
+        rn : {n:20,s:''}, //range
+        cse : 'AIzaSyDKtYIV8gPpfVx7UfgLg9kDuVcomeoJzf8', //CSE key
+        sei : '010864853598277031103:prfwzgnfqta', //search engine id
+        csp : 0, // current search page
+        csr : null, //current search result
+        ls:false, //lazy search
+        gs : function(school, callback){
+            var _this = this;
+            $.get("https://www.googleapis.com/customsearch/v1?num=10&start="+((_this.csp*10)+1)+"&key="+_this.cse+"&cx="+_this.sei+"&q="+school,callback);
+        },
+        rcs : function () { //reset current school
+            var _this = this;
+            _this.nfy(false);
+            _this.csp = 0;
+            _this.ls = false;
+            _this.sr = [];
+            _this.si++;
+            _this.cs = _this.sl[_this.si];
+            if(_this.sl.length - _this.si<8){
+                _this.gsl();
+            }
+            $('.status-list').animate({scrollTop: $('#'+_this.cs.UnitID).offset().top-$('.status-list').offset().top},300);
+            $('.status-list li').removeClass('active');
+            $('#'+_this.cs.UnitID).addClass('active');
+        },
+        l:function () { //loop
+            var _this = this;
+            if(_this.sl.length) {//if school list is not empty
+                if (!_this.cs || (_this.cs.ReviewStatus && parseInt(_this.cs.ReviewStatus) >= _this.rl)) {
+                    //if current school is not assigned or
+                    //the number of review is greater than or equal _this.rl
+                    //pop the first element from school list and assign it to current school variable
+                    _this.rcs();
+                }
+            }
+            if(_this.sr.length<4 && _this.csp<9 && _this.cs.ReviewStatus < _this.rl){
+                //if search result is less than 3, maybe not searched yet or
+                //out of 10 search results, 7 is used already
+                //we load more search results in advance
+                //but before that, we check current search page
+                //using custom search engine, you can search upto 100 results (10 pages of 10 results)
+                //So, if current page is greater than 9 (10 page searched already)
+                if(!_this.ls){
+                    _this.nfy(true,'i','Searching for results...');
+                }
+                console.log("Starting to search : "+ _this.sr.length);
+                _this.gs(_this.cs.Name, function (data) {
+                    _this.nfy(false);
+                    console.log(data);
+
+                    if(data && data.items && Array.isArray(data.items)){
+                        _this.sr = _this.sr.concat(data.items);
+                    }
+                    if(!_this.ls){
+                        _this.ls = true;
+                        setTimeout(function () {
+                            _this.d();
+                        },1000);
+                    }
+
+                    _this.ec();
+                });
+                _this.csp++;
+
+            }
+
+            console.log(_this.cs.ReviewStatus);
+            if(_this.cs.ReviewStatus >= _this.rl){
+                _this.nfy(true,'e','<b>'+_this.cs.Name+'</b> is reviewed already!');
+            }
+
+            if(_this.ls && _this.cs.ReviewStatus < _this.rl){
+                _this.d();
+                _this.ec();
+            }
+
+        },
+        ec: function () { //exit case
+            if(_this.sl.length==0 && (_this.sr.length==0 || _this.cs.ReviewStatus >=_this.rl)){
+                console.log("else");
+                //if school list is empty
+                //end current season
+                $(this.frm).attr('src','');
+                $(this.qa).empty();
+                this.nfy(true, 'i','School list is empty, please start a new session');
+                return true;
+            }
+            return false;
+        },
+        scsr:function () { //save current school review
+            var _this = this;
+            $.ajax({
+                url: _this.sar+'/UnitID/'+_this.cs.UnitID,
+                type:'PUT',
+                data: _this.cs,
+                success: function (data) {
+                    console.log("School updated "+data);
+                }
+            })
+        },
+        usr:function () { //update school review
+            var _this = this;
+            if(!this.cs.ReviewStatus || !jQuery.isNumeric(this.cs.ReviewStatus)){
+                this.cs.ReviewStatus = 0;
+            }
+            if(_this.cs.ReviewStatus<_this.rl){
+                this.cs.ReviewStatus = parseInt(this.cs.ReviewStatus);
+                this.cs.ReviewStatus++;
+                var key = "Article_"+this.cs.ReviewStatus;
+                this.cs[key]=this.csr.link;
+            }
+            this.wp(this.cs);
+            if(this.cs.ReviewStatus==_this.rl){
+                this.scsr();
+                this.nfy(true,'s','School review complete!');
+
+            }else{
+                this.l();
+            }
+
+
+
+        },
+        d : function () { //display options
+            _this = this;
+
+            var yes = $('<button>').attr('title','Yes').addClass('yes').append(
+                $('<i>').addClass('fa fa-check')
+            ).click(function () {
+                console.log("yes");
+                _this.usr();
+            });
+            var no = $('<button>').attr('title','No').addClass('no').append(
+                $('<i>').addClass('fa fa-close')
+            ).click(function () {
+                console.log("No");
+                _this.l();
+            });
+
+            var next = $('<button>').attr('title','Next School').addClass('next').append(
+                $('<i>').addClass('fa fa-angle-double-right')
+            ).click(function () {
+                _this.nfy(true,'i','Moving to next school');
+                setTimeout(function () {
+                    _this.cs.ReviewStatus = 'incomplete';
+                    _this.scsr();
+
+                    _this.cs = null;
+                    _this.nfy(false);
+                    _this.l();
+                },3000);
+            });
+
+            var title = $('<p>').html("Is the article below about &ldquo;<b>"+_this.cs.Name+"</b>&rdquo; ?");
+            title.append(yes).append(no).append(next);
+            $(_this.qa).empty();
+            $(_this.qa).append(title);
+
+            if(!_this.sr.length){
+//                _this.scsr();
+                _this.nfy(true,'e','Article is empty !');
+                return false;
+            }
+            //pop first element from search result list
+            _this.csr = _this.sr.shift();
+
+            $(this.frm).attr('src', this.csr.link);
+
+        },
+        i : function () {//init
+            _this = this;
+
+            if(typeof jQuery=='undefined') {
+                this.lj();
+            } else {
+
+                var minInput = $("<input>").attr({type:"number",placeholder:"Number of Rows"}).css({
+                    margin:5,
+                    padding:5
+                }).change(function () {
+                    _this.rn['n']=$(this).val();
+                });
+
+                var maxInput = $("<input>").attr({ type:"text" , placeholder:"Review Status"}).css({
+                    margin:5,
+                    padding:5
+                }).change(function () {
+                    _this.rn['s']=$(this).val();
+                });
+
+                var btn = $('<button>').text('Load').css({
+                    padding:5,
+                    border:0
+                }).click(function () {
+                    _this.nfy(true,'i','loading...');
+                   _this.gsl();
+                });
+                _this.na.append(minInput).append(maxInput).append(btn);
+
+            }
+
+        }
+
+    };
+
+bookmarklet.i();
+</script>
+<script>
+    var html = document.getElementById('bookmarklet_code');
+
+</script>
+</html>
