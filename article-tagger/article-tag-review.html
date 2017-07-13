@@ -9,212 +9,21 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.0/jquery.mark.js"></script>
-    <style>
-        *{
-            /*margin: 0;*/
-            /*padding: 0;*/
-            font-family: 'Roboto', sans-serif;
-        }
-        mark{
-            background: orange !important;
-            color: black !important;
-        }
-        div.container{
-            width: 100%;
-            max-width: 1280px;
-            margin:0 auto;
-        }
-
-        .row{
-            /*width: 100%;*/
-            overflow: hidden;
-        }
-
-        .question_area{
-            float: left;
-            width: 70%;
-            height: auto;
-        }
-
-        .status_area{
-            float: left;
-            width: 25%;
-            margin-left: 5%;
-        }
-
-        .title-row{
-            padding: 5px;
-            background: #222222;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .title-row h1{
-            font-size: 18px;
-            font-weight:normal;
-            text-align: center;
-        }
-
-        .notification-row{
-            color: #fff;
-            font-size: 14px;
-            text-align: center;
-            padding: 5px;
-
-        }
-
-        .notification-row.error{
-            background: #FF0000;
-        }
-
-        .notification-row.success{
-            background: #1D9D74;
-        }
-
-        .notification-row.info{
-            background: #4080FF;
-        }
-
-
-        .question-row,
-        .status-title-row{
-            font-size: 14px;
-            padding:5px 20px;
-            background: #eee;
-        }
-
-        .question_area button{
-            padding: 5px;
-            border:none;
-            border-radius: 3px;
-            margin:2px 3px;
-        }
-
-        .question_area .yes{
-            background: #1D9D74;
-
-        }
-
-        .question_area .no{
-            background: #FF0000;
-        }
-
-        .question_area .next{
-            background: #489FDF;
-        }
-
-        .question_area button i{
-            color: #fff;
-        }
-
-        #bl-article{
-            margin-top: 10px;
-            width: 100%;
-            overflow: hidden;
-        }
-
-
-
-        .status-title-row p{
-            padding: 5px 0;
-        }
-
-        .status-list{
-            padding:0;
-            margin: 10px 0 0 0;
-            list-style: none;
-            height: calc(100vh - 90px);
-            overflow: auto;
-            border-top: #ccc solid 1px;
-        }
-
-        .status-list li{
-            padding: 10px;
-            border: #ccc solid 1px;
-            border-top: 0;
-            cursor: pointer;
-            transition: .3s all;
-            position: relative;
-            font-size: 14px;
-
-        }
-
-        .status-list p{
-            position: relative;
-            z-index: 10;
-
-        }
-
-        .status-list li:before{
-            display: inline-block;
-            position: absolute;
-            height: 12px;
-            font-size:10px;
-            color: #fff;
-            text-align: center;
-            transition: all .3s;
-            background: #1D9D74;
-            top: 0;
-            left: 0;
-
-        }
-
-        .status-list li.p-0:before{
-            content: '';
-            width: 0;
-        }
-
-        .status-list li.p-1:before{
-            content: '20%';
-            width: 20%;
-        }
-
-        .status-list li.p-2:before{
-            content: '40%';
-            width: 40%;
-        }
-
-        .status-list li.p-3:before{
-            content: '60%';
-            width: 60%;
-        }
-
-        .status-list li.p-4:before{
-            content: '80%';
-            width: 80%;
-        }
-
-        .status-list li.p-5:before{
-            content: '100%';
-            width: 100%;
-        }
-
-        .status-list li[class*=p-5]{
-            opacity: .8;
-        }
-
-
-        .status-list li:hover,
-        .status-list li.active{
-            padding-left: 20px;
-            border-left-width: 3px;
-            border-left-color: #1D9D74;
-        }
-
-
-
-    </style>
     <link rel="stylesheet" href="style.css">
     <!--<script src="uglify.js"></script>-->
-    <title>Deprecated Article Tagger</title>
+    <title>Article Tag Review</title>
 </head>
 <body>
     <div class="container">
         <div class="row notification-row">
 
         </div>
+        <div class="row input-row">
+            <p>What row do you want to start reviewing? <input type="number" id="start-point"> </p>
+            <p>How many rows do you want to review? <input type="number" id="length"> <button id="load">Load</button> </p>
+        </div>
         <div class="row title-row">
-            <h1>Deprecated Article Tagger</h1>
+            <h1>Article Tag Review</h1>
         </div>
         <div class="display-row">
             <div class="question_area">
@@ -241,6 +50,18 @@
         var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
             return http + '//cors-anywhere.herokuapp.com/' + url;
     }
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+
     var bookmarklet ={
         review_length:5, //review length
         notification_area:$(".notification-row"),//notification area
@@ -328,8 +149,6 @@
                 ).text(this.school_list[i].Name+" - "+this.school_list[i].City+" - "+this.school_list[i].State)
                     .click(function (e) {
                         _this.school_index = parseInt($(this).attr('data-index'))-1;
-                        _this.current_school.ReviewStatus = _this.search_empty ? 'researched' : _this.current_school.ReviewStatus;
-                        _this.save_school_reivew();
                         _this.current_school = null;
                         _this.notify(false);
                         _this.loop();
@@ -341,11 +160,10 @@
 
         },
         current_school : null, // current school
-        search_results : [], //search result
-        search_result_index : -1,
-        search_result_changed : false,
-        search_empty : false,
-//        article_cache_lish : [],
+        article_list : [], //search result
+        article_index : -1,
+        article_changed : false,
+        article_empty : false,
         cache_xhr : null,
         params : {n:20,s:''}, //params
         cse_key : 'AIzaSyDKtYIV8gPpfVx7UfgLg9kDuVcomeoJzf8', //CSE key
@@ -365,25 +183,21 @@
             if(_this.cache_xhr){
                 _this.cache_xhr.abort();
             }
-//            _this.article_cache_lish = [];
-            _this.search_results = [];
-            _this.search_result_index = -1;
-            _this.search_empty = false;
-            _this.current_search_result = false;
+            _this.article_list = [];
+            _this.article_index = -1;
+            _this.article_empty = false;
+            _this.current_article = null;
             _this.school_index++;
             _this.current_school = _this.school_list[_this.school_index];
-           // if(_this.school_list.length - _this.school_index<8){
-               // _this.get_school_list();
-            //}
             $('.status-list').animate({scrollTop: $('#'+_this.current_school.UnitID).offset().top-$('.status-list').offset().top},300);
             $('.status-list li').removeClass('active');
             $('#'+_this.current_school.UnitID).addClass('active');
         },
         display_page : function () {
             var _this = this;
-            if(_this.search_results[_this.search_result_index] && _this.search_results[_this.search_result_index]['results_cached']){
+            if(_this.article_list[_this.article_index] && _this.article_list[_this.article_index]['results_cached']){
                 $(_this.frame).empty();
-                var html = _this.search_results[_this.search_result_index].cache;
+                var html = _this.article_list[_this.article_index].cache;
                 setTimeout(function () {
                     $(_this.frame).append(html.title);
                     $(_this.frame).append(html.subtitle);
@@ -421,10 +235,10 @@
 
         },
         cache_article: function () {
-            var _this = this, i=0, l=_this.search_results.length, empty_id=null;
+            var _this = this, i=0, l=_this.article_list.length, empty_id=null;
             if(l){
                 for(i=0; i<l; i++){
-                    if(!_this.search_results[i]['results_cached'] && empty_id === null){
+                    if(!_this.article_list[i]['results_cached'] && empty_id === null){
                         empty_id = i;
                         break;
                     }
@@ -432,16 +246,16 @@
                 }
 
                 if(empty_id !== null){
-                    var url = get_cors_url(_this.search_results[empty_id].link);
+                    var url = get_cors_url(_this.article_list[empty_id].link);
                     _this.xhr = $.ajax({
                         url: url,
                         type: 'GET',
                         success: function (data) {
-                            if(_this.search_results[empty_id]){
-                                _this.search_results[empty_id]['results_cached'] = true;
+                            if(_this.article_list[empty_id]){
+                                _this.article_list[empty_id]['results_cached'] = true;
 
 //                                var html = $(data).find('#block-system-main');
-                                _this.search_results[empty_id]['cache'] = _this.parseDom(data);
+                                _this.article_list[empty_id]['cache'] = _this.parseDom(data);
 //                                console.log(_this.search_results[empty_id]['cache']);
                             }
                             _this.cache_article();
@@ -456,91 +270,62 @@
             }
         },
         init_cache_engine:function () {
-            var _this = this;
-            setTimeout(function () {
-                if(_this.search_results.length){
-                    _this.cache_article();
-                }else{
-                    _this.init_cache_engine();
-                }
-            }, 2000);
+
         },
         loop:function () { //loop
             var _this = this;
             $(_this.frame).html("<h1 style='text-align: center'>Loading....</h1>");
             if(_this.school_list.length) {//if school list is not empty
-                if (!_this.current_school || (_this.current_school.ReviewStatus && parseInt(_this.current_school.ReviewStatus) >= _this.review_length)) {
+                if (!_this.current_school) {
                     //if current school is not assigned or
-                    //the number of review is greater than or equal _this.review_length
                     //pop the first element from school list and assign it to current school variable
                     _this.reset_current_school();
                 }
             }
-            if(_this.search_results.length - _this.search_result_index<4 && _this.current_search_page<9 && _this.current_school.ReviewStatus < _this.review_length){
-                //if search result is less than 3, maybe not searched yet or
-                //out of 10 search results, 7 is used already
-                //we load more search results in advance
-                //but before that, we check current search page
-                //using custom search engine, you can search upto 100 results (10 pages of 10 results)
-                //So, if current page is greater than 9 (10 page searched already)
-                if(!_this.lazy_search){
-                    _this.notify(true,'i','Searching for results...');
+            if(!_this.article_list.length){
+                var ai = 1;
+                var articles = [];
+
+
+                while ('Article_'+ai in _this.current_school){
+
+                    if(_this.current_school['Article_'+ai]){
+
+                        articles.push({
+                            link:_this.current_school['Article_'+ai],
+                            results_cached : false,
+                            cache : null,
+                            related : false
+                        });
+                    }
+                    ai++;
                 }
-                console.log("Starting to search : "+ _this.search_results.length);
-                _this.google_search(_this.current_school.Name, function (data) {
-                    _this.notify(false);
-                    console.log(data);
 
-                    if(data && data.items && Array.isArray(data.items)){
-                        _this.search_results = _this.search_results.concat(data.items);
-                        _this.cache_article();
-                    }else{
-                        if(!_this.lazy_search ){
-                            _this.search_empty = true;
-                        }
-                    }
-
-
-
-                    if(!_this.lazy_search){
-                        _this.lazy_search = true;
-                        setTimeout(function () {
-                            _this.display_article();
-                        },1000);
-                    }
-
-                    _this.check_exit_case();
-                });
-                _this.current_search_page++;
-
+                _this.article_list = articles;
+                _this.cache_article();
             }
 
-            console.log(_this.current_school.ReviewStatus);
-            if(_this.current_school.ReviewStatus >= _this.review_length){
-                _this.notify(true,'e','<b>'+_this.current_school.Name+'</b> is reviewed already!');
-            }
-
-            if(_this.lazy_search && _this.current_school.ReviewStatus < _this.review_length){
-                _this.display_article();
-                _this.check_exit_case();
-            }
+            _this.display_article();
 
         },
         check_exit_case: function () { //exit case
-            var _this = this;
-            if(_this.school_list.length==0 && (_this.search_results.length==0 || _this.current_school.ReviewStatus >=_this.review_length)){
-                console.log("else");
-                //if school list is empty
-                //end current season
-                $(this.frame).empty();
-                $(this.question_area).empty();
-                this.notify(true, 'i','School list is empty, please start a new session');
-                return true;
-            }
             return false;
         },
         save_school_reivew:function () { //save current school review
             var _this = this;
+            var ai = 1;
+            var ar = 0;
+            while ('Article_'+ai in _this.current_school){
+                if(_this.article_list[ai-1].related){
+                    ar++;
+                }else{
+                    _this.current_school['Article_'+ai] = '';
+                }
+                ai++;
+            }
+
+            _this.current_school.ReviewStatus = ar;
+
             $.ajax({
                 url: _this.sheetsu_api_root+'/UnitID/'+_this.current_school.UnitID,
                 type:'PUT',
@@ -552,25 +337,9 @@
         },
         update_school_review:function () { //update school review
             var _this = this;
-            if(!this.current_school.ReviewStatus || !jQuery.isNumeric(this.current_school.ReviewStatus)){
-                this.current_school.ReviewStatus = 0;
-            }
-            if(_this.current_school.ReviewStatus<_this.review_length){
-                this.current_school.ReviewStatus = parseInt(this.current_school.ReviewStatus);
-                this.current_school.ReviewStatus++;
-                var ai = 1;
-                while('Article_'+ai in _this.current_school){
-                    if(!_this.current_school['Article_'+ai]){
-                        _this.current_school['Article_'+ai] = this.current_search_result.link;
-                        break;
-                    }
-                    ai++;
-                }
-//                var key = "Article_"+this.current_school.ReviewStatus;
-//                this.current_school[key]=this.current_search_result.link;
-            }
-            this.write_progress(this.current_school);
-            if(this.current_school.ReviewStatus==_this.review_length){
+            _this.article_list[_this.article_index].related = true;
+
+            if(_this.article_index + 1 ==_this.review_length){
                 this.save_school_reivew();
                 this.notify(true,'s','School review complete!');
 
@@ -590,6 +359,8 @@
                 $('<i>').addClass('fa fa-close')
             ).click(function () {
                 console.log("No");
+                _this.current_school.ReviewStatus -= 1;
+                _this.write_progress(_this.current_school);
                 _this.loop();
             });
 
@@ -598,9 +369,6 @@
             ).click(function () {
                 _this.notify(true,'i','Moving to next school');
                 setTimeout(function () {
-                    _this.current_school.ReviewStatus = _this.search_empty ? 'researched' : _this.current_school.ReviewStatus;
-                    _this.save_school_reivew();
-
                     _this.current_school = null;
                     _this.notify(false);
                     _this.loop();
@@ -612,42 +380,40 @@
             title.append(yes).append(no).append(next);
             $(_this.question_area).empty();
             $(_this.question_area).append(title);
-            _this.search_result_index++;
-            if(_this.search_result_index >= _this.search_results.length){
-                _this.notify(true,'e','Article is empty !');
+            _this.article_index++;
+            if(_this.article_index >= _this.article_list.length){
+                _this.notify(true,'e','Article list is empty !');
+                _this.save_school_reivew();
                 return false;
             }
             //pop first element from search result list
 
-            _this.current_search_result = _this.search_results[_this.search_result_index];
-            _this.search_result_changed = true;
             _this.display_page();
         },
         init : function () {//init
             var _this = this;
 
-            var minInput = $("<input>").attr({type:"number",placeholder:"Number of Rows"}).css({
-                margin:5,
-                padding:5
-            }).change(function () {
+            $("#length").change(function () {
                 _this.params['n']=$(this).val();
             });
 
-            var maxInput = $("<input>").attr({ type:"number" , placeholder:"Starting point"}).css({
-                margin:5,
-                padding:5
-            }).change(function () {
+            $("#start-point").change(function () {
                 _this.params['o']=$(this).val();
             });
 
-            var btn = $('<button>').text('Load').css({
-                padding:5,
-                border:0
-            }).click(function () {
+
+
+            $('#load').click(function () {
+                $(".input-row").slideUp();
                 _this.notify(true,'i','loading...');
                 _this.get_school_list();
             });
-            _this.notification_area.append(minInput).append(maxInput).append(btn);
+
+            if(getParameterByName('source')=='tagger' && getParameterByName('row')){
+                $("#length").val(1).change();
+                $("#start-point").val(parseInt(getParameterByName('row'))-1).change();
+                $('#load').click();
+            }
 
         }
 

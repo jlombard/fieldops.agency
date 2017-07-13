@@ -9,212 +9,20 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.0/jquery.mark.js"></script>
-    <style>
-        *{
-            /*margin: 0;*/
-            /*padding: 0;*/
-            font-family: 'Roboto', sans-serif;
-        }
-        mark{
-            background: orange !important;
-            color: black !important;
-        }
-        div.container{
-            width: 100%;
-            max-width: 1280px;
-            margin:0 auto;
-        }
-
-        .row{
-            /*width: 100%;*/
-            overflow: hidden;
-        }
-
-        .question_area{
-            float: left;
-            width: 70%;
-            height: auto;
-        }
-
-        .status_area{
-            float: left;
-            width: 25%;
-            margin-left: 5%;
-        }
-
-        .title-row{
-            padding: 5px;
-            background: #222222;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .title-row h1{
-            font-size: 18px;
-            font-weight:normal;
-            text-align: center;
-        }
-
-        .notification-row{
-            color: #fff;
-            font-size: 14px;
-            text-align: center;
-            padding: 5px;
-
-        }
-
-        .notification-row.error{
-            background: #FF0000;
-        }
-
-        .notification-row.success{
-            background: #1D9D74;
-        }
-
-        .notification-row.info{
-            background: #4080FF;
-        }
-
-
-        .question-row,
-        .status-title-row{
-            font-size: 14px;
-            padding:5px 20px;
-            background: #eee;
-        }
-
-        .question_area button{
-            padding: 5px;
-            border:none;
-            border-radius: 3px;
-            margin:2px 3px;
-        }
-
-        .question_area .yes{
-            background: #1D9D74;
-
-        }
-
-        .question_area .no{
-            background: #FF0000;
-        }
-
-        .question_area .next{
-            background: #489FDF;
-        }
-
-        .question_area button i{
-            color: #fff;
-        }
-
-        #bl-article{
-            margin-top: 10px;
-            width: 100%;
-            overflow: hidden;
-        }
-
-
-
-        .status-title-row p{
-            padding: 5px 0;
-        }
-
-        .status-list{
-            padding:0;
-            margin: 10px 0 0 0;
-            list-style: none;
-            height: calc(100vh - 90px);
-            overflow: auto;
-            border-top: #ccc solid 1px;
-        }
-
-        .status-list li{
-            padding: 10px;
-            border: #ccc solid 1px;
-            border-top: 0;
-            cursor: pointer;
-            transition: .3s all;
-            position: relative;
-            font-size: 14px;
-
-        }
-
-        .status-list p{
-            position: relative;
-            z-index: 10;
-
-        }
-
-        .status-list li:before{
-            display: inline-block;
-            position: absolute;
-            height: 12px;
-            font-size:10px;
-            color: #fff;
-            text-align: center;
-            transition: all .3s;
-            background: #1D9D74;
-            top: 0;
-            left: 0;
-
-        }
-
-        .status-list li.p-0:before{
-            content: '';
-            width: 0;
-        }
-
-        .status-list li.p-1:before{
-            content: '20%';
-            width: 20%;
-        }
-
-        .status-list li.p-2:before{
-            content: '40%';
-            width: 40%;
-        }
-
-        .status-list li.p-3:before{
-            content: '60%';
-            width: 60%;
-        }
-
-        .status-list li.p-4:before{
-            content: '80%';
-            width: 80%;
-        }
-
-        .status-list li.p-5:before{
-            content: '100%';
-            width: 100%;
-        }
-
-        .status-list li[class*=p-5]{
-            opacity: .8;
-        }
-
-
-        .status-list li:hover,
-        .status-list li.active{
-            padding-left: 20px;
-            border-left-width: 3px;
-            border-left-color: #1D9D74;
-        }
-
-
-
-    </style>
     <link rel="stylesheet" href="style.css">
-    <!--<script src="uglify.js"></script>-->
-    <title>Deprecated Article Tagger</title>
+    <title>Article Tagger</title>
 </head>
 <body>
     <div class="container">
         <div class="row notification-row">
 
         </div>
+        <div class="row input-row">
+            <p>Batch name <input type="text" id="batch_name"> <button id="load">Load</button> </p>
+        </div>
+
         <div class="row title-row">
-            <h1>Deprecated Article Tagger</h1>
+            <h1>Article Tagger</h1>
         </div>
         <div class="display-row">
             <div class="question_area">
@@ -226,7 +34,7 @@
             </div>
             <div class="status_area">
                 <div class="status-title-row">
-                    <p>School Status</p>
+                    <p>Current Row Id : <span id="row_id"></span></p>
                 </div>
                 <ul class="status-list">
                     <!--<li class="p-2"><p>dsfsfs</p></li>-->
@@ -274,40 +82,29 @@
         get_school_list: function () { //get school list
             var qs = "";
             var _this = this;
-            if(!this.params.o){
-                this.params['o'] = 0;
-            }
-            qs += "offset="+this.params.o;
-            if(this.params.n && parseInt(this.params.n)){
-                qs += "&limit="+this.params.n;
-            }else{
-                qs += "&limit=30";
-            }
-            var url = this.sheetsu_api_root+"?"+qs;
+
+            qs += "Assignee="+this.params.s;
+
+            var url = this.sheetsu_api_root+"/search?"+qs;
 //            console.log(url);
             $.get(url,function (data) {
                if(!data.error){
                    _this.notify(false);
                    _this.school_list = _this.school_list.concat(data);
                    _this.display_list();
-                   if(!_this.lazy_load){
-                       setTimeout(function(){
-                           _this.loop();
-                       },2000);
-                       _this.lazy_load = true;
-                   }
+                   setTimeout(function(){
+                       _this.loop();
+                   },2000);
 
                }else{
-                   if(!_this.lazy_load){
-                       _this.notify(true,'e','Sorry, No data found');
-                   }else{
-                       console.log('No data found');
-                   }
-
-
+                   $(".input-row").slideDown();
+                   _this.notify(true,'e','Sorry, No data found');
                }
 
-            });
+            }).fail(function() {
+                $(".input-row").slideDown();
+                _this.notify(true,'e','Sorry, No data found');
+            });;
         },
         write_progress:function (school) { //write progress
             if(!school.ReviewStatus || !jQuery.isNumeric(school.ReviewStatus)){
@@ -320,12 +117,17 @@
             var dl_area = $(".status-list");
             for(var i=0; i<this.school_list.length; i++){
                 var li = $('<li>');
+                var link = $('<a>').addClass("fa fa-external-link").attr({
+                   href: "article-tag-review.html?source=tagger&row="+ this.school_list[i].Row,
+                    title: "Click to open in article reviewer",
+                    target: "_blank"
+                });
                 li.attr(
                     {
                         'id':this.school_list[i].UnitID,
                         'data-index':i
                     }
-                ).text(this.school_list[i].Name+" - "+this.school_list[i].City+" - "+this.school_list[i].State)
+                ).html(this.school_list[i].Name+" - "+this.school_list[i].City+" - "+this.school_list[i].State+" ")
                     .click(function (e) {
                         _this.school_index = parseInt($(this).attr('data-index'))-1;
                         _this.current_school.ReviewStatus = _this.search_empty ? 'researched' : _this.current_school.ReviewStatus;
@@ -335,6 +137,7 @@
                         _this.loop();
                     });
 
+                li.append(link);
                 dl_area.append(li);
                 this.write_progress(this.school_list[i]);
             }
@@ -375,7 +178,12 @@
            // if(_this.school_list.length - _this.school_index<8){
                // _this.get_school_list();
             //}
-            $('.status-list').animate({scrollTop: $('#'+_this.current_school.UnitID).offset().top-$('.status-list').offset().top},300);
+            if(_this.current_school){
+                $("#row_id").text(_this.current_school.Row);
+            }else {
+                $("#row_id").text("--");
+            }
+            $('#' + _this.current_school.UnitID)[0].scrollIntoView( true );
             $('.status-list li').removeClass('active');
             $('#'+_this.current_school.UnitID).addClass('active');
         },
@@ -473,6 +281,7 @@
                     //if current school is not assigned or
                     //the number of review is greater than or equal _this.review_length
                     //pop the first element from school list and assign it to current school variable
+                    _this.question_area.empty();
                     _this.reset_current_school();
                 }
             }
@@ -528,7 +337,7 @@
         },
         check_exit_case: function () { //exit case
             var _this = this;
-            if(_this.school_list.length==0 && (_this.search_results.length==0 || _this.current_school.ReviewStatus >=_this.review_length)){
+            if(_this.school_list.length < _this.school_index){
                 console.log("else");
                 //if school list is empty
                 //end current season
@@ -566,8 +375,6 @@
                     }
                     ai++;
                 }
-//                var key = "Article_"+this.current_school.ReviewStatus;
-//                this.current_school[key]=this.current_search_result.link;
             }
             this.write_progress(this.current_school);
             if(this.current_school.ReviewStatus==_this.review_length){
@@ -626,28 +433,23 @@
         init : function () {//init
             var _this = this;
 
-            var minInput = $("<input>").attr({type:"number",placeholder:"Number of Rows"}).css({
-                margin:5,
-                padding:5
-            }).change(function () {
-                _this.params['n']=$(this).val();
+            $("#batch_name").change(function () {
+                _this.params['s']=$(this).val();
             });
 
-            var maxInput = $("<input>").attr({ type:"number" , placeholder:"Starting point"}).css({
-                margin:5,
-                padding:5
-            }).change(function () {
-                _this.params['o']=$(this).val();
-            });
+//            $("#start-point").change(function () {
+//                _this.params['o']=$(this).val();
+//            });
 
-            var btn = $('<button>').text('Load').css({
-                padding:5,
-                border:0
-            }).click(function () {
-                _this.notify(true,'i','loading...');
-                _this.get_school_list();
+            $('#load').click(function () {
+                if(!_this.params.s){
+                    _this.notify(true,'e','Please provide batch name');
+                }else{
+                    $(".input-row").slideUp();
+                    _this.notify(true,'i','loading...');
+                    _this.get_school_list();
+                }
             });
-            _this.notification_area.append(minInput).append(maxInput).append(btn);
 
         }
 
