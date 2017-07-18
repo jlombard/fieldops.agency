@@ -7,48 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.0/jquery.mark.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <!--<script src="uglify.js"></script>-->
-    <title>Article Tag Review</title>
+
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row notification-row">
+<div class="container">
+    <div class="row notification-row">
 
-        </div>
-        <div class="row input-row">
-            <p>What row do you want to start reviewing? <input type="number" id="start-point"> </p>
-            <p>How many rows do you want to review? <input type="number" id="length"> <button id="load">Load</button> </p>
-        </div>
-        <div class="row title-row">
-            <h1>Article Tag Review</h1>
-        </div>
-        <div class="display-row">
-            <div class="question_area">
-                <div class="row question-row">
-                    <!--<p>Test Question ? <button class="yes"><i class="fa fa-check"></i></button> <button class="no"><i class="fa fa-close"></i></button></p>-->
-                </div>
+    </div>
+    <div class="row input-row">
+        <p>What row do you want to start reviewing? <input type="number" id="start-point"> </p>
+        <p>How many rows do you want to review? <input type="number" id="length"> <button id="load">Load</button> </p>
+    </div>
+    <div class="row title-row">
+        <h1>Article Tagger</h1>
+    </div>
+    <div class="display-row">
+        <div class="question_area">
+            <div class="row question-row">
+                <!--<p>Test Question ? <button class="yes"><i class="fa fa-check"></i></button> <button class="no"><i class="fa fa-close"></i></button></p>-->
+            </div>
 
-                <div class="row" id="bl-article"></div>
+            <div class="row" id="bl-article"></div>
+        </div>
+        <div class="status_area">
+            <div class="status-title-row">
+                <p>School Status</p>
             </div>
-            <div class="status_area">
-                <div class="status-title-row">
-                    <p>School Status</p>
-                </div>
-                <ul class="status-list">
-                    <!--<li class="p-2"><p>dsfsfs</p></li>-->
-                </ul>
-            </div>
+            <ul class="status-list">
+                <!--<li class="p-2"><p>dsfsfs</p></li>-->
+            </ul>
         </div>
     </div>
+</div>
 <!--<a href='javascript:(function(){})()' id="bookmarklet">Bookmarklet</a>-->
 </body>
 <script id="bookmarklet_code">
+//    toastr.options.progressBar = true;
     function get_cors_url(url) {
         var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-            return http + '//cors-anywhere.herokuapp.com/' + url;
+        return http + '//cors-anywhere.herokuapp.com/' + url;
     }
 
     function getParameterByName(name, url) {
@@ -67,24 +70,24 @@
         notification_area:$(".notification-row"),//notification area
         frame:$("#bl-article"),//iframe
         question_area:$(".question-row"),
-        notify: function (show_notification, type, message) { //notify
+        notify: function (show_notification, type, title, message, option) { //notify
             if(!show_notification){
-                $(this.notification_area).slideUp();
-                return;
+//                toastr.clear();
+//                return;
             }
             $(this.notification_area).attr('class','notification-row');
             if(type=='e'){
-                $(this.notification_area).addClass('error').html(message);
+                toastr.warning(message, title, option);
             }
 
             if(type=='s'){
-                $(this.notification_area).addClass('success').html(message);
+                toastr.success(message, title, option);
             }
 
             if(type=='i'){
-                $(this.notification_area).addClass('info').html(message);
+                toastr.info(message, title, option);
             }
-            $(this.notification_area).slideDown();
+            
 
 
         },
@@ -92,6 +95,7 @@
         school_list : [], //school list
         school_index : -1, //school index
         lazy_load : false, // lazy load
+        article_cache:{},
         get_school_list: function () { //get school list
             var qs = "";
             var _this = this;
@@ -105,28 +109,43 @@
                 qs += "&limit=30";
             }
             var url = this.sheetsu_api_root+"?"+qs;
-//            console.log(url);
             $.get(url,function (data) {
-               if(!data.error){
-                   _this.notify(false);
-                   _this.school_list = _this.school_list.concat(data);
-                   _this.display_list();
-                   if(!_this.lazy_load){
-                       setTimeout(function(){
-                           _this.loop();
-                       },2000);
-                       _this.lazy_load = true;
-                   }
+                toastr.clear();
+                if(!data.error){
+                    _this.school_list = _this.school_list.concat(data);
+                    var si = 0;
+                    while (_this.school_list[si]){
+                        var ai = 1;
+                        while ('Article_'+ai in _this.school_list[si]){
+                            if(_this.school_list[si]['Article_'+ai]){
+                                var url = get_cors_url(_this.school_list[si]['Article_'+ai]);
+                                _this.article_cache[url] = {
+                                    results_cached : false,
+                                    cache : null
+                                };
+                            }
+                            ai++;
+                        }
+                        si++;
+                    }
+                    _this.display_list();
+                    _this.cache_article();
+                    if(!_this.lazy_load){
+                        setTimeout(function(){
+                            _this.loop();
+                        },2000);
+                        _this.lazy_load = true;
+                    }
 
-               }else{
-                   if(!_this.lazy_load){
-                       _this.notify(true,'e','Sorry, No data found');
-                   }else{
-                       console.log('No data found');
-                   }
+                }else{
+                    if(!_this.lazy_load){
+                        _this.notify(true,'e','Sorry, No data found');
+                    }else{
+                        console.log('No data found');
+                    }
 
 
-               }
+                }
 
             });
         },
@@ -150,7 +169,7 @@
                     .click(function (e) {
                         _this.school_index = parseInt($(this).attr('data-index'))-1;
                         _this.current_school = null;
-                        _this.notify(false);
+//                        _this.notify(false);
                         _this.loop();
                     });
 
@@ -177,7 +196,7 @@
         },
         reset_current_school : function () { //reset current school
             var _this = this;
-            _this.notify(false);
+//            _this.notify(false);
             _this.current_search_page = 0;
             _this.lazy_search = false;
             if(_this.cache_xhr){
@@ -189,38 +208,54 @@
             _this.current_article = null;
             _this.school_index++;
             _this.current_school = _this.school_list[_this.school_index];
-            $('.status-list').animate({scrollTop: $('#'+_this.current_school.UnitID).offset().top-$('.status-list').offset().top},300);
+            _this.notify(true,'i','Current school',_this.current_school.Name);
+            $('#' + _this.current_school.UnitID)[0].scrollIntoView( true );
             $('.status-list li').removeClass('active');
             $('#'+_this.current_school.UnitID).addClass('active');
         },
+        get_article: function(url, callback){
+            var _this = this;
+            var _url = get_cors_url(url);
+            if(_this.article_cache[_url]['results_cached']){
+                callback(_this.article_cache[_url]['cache']);
+            }else{
+                _this.xhr.abort();
+
+                _this.xhr = $.ajax({
+                    url: _url,
+                    type: 'GET',
+                    success: function (data) {
+                        _this.article_cache[this.url]['results_cached'] = true;
+                        _this.article_cache[this.url]['cache'] = _this.parseDom(data);
+                        callback(_this.article_cache[this.url]['cache']);
+                        _this.cache_article();
+
+                    },
+                    error:function () {
+                        _this.cache_article();
+                    }
+                });
+            }
+        },
         display_page : function () {
             var _this = this;
-            if(_this.article_list[_this.article_index] && _this.article_list[_this.article_index]['results_cached']){
-                $(_this.frame).empty();
-                var html = _this.article_list[_this.article_index].cache;
+            $(_this.frame).empty();
+
+            _this.get_article(_this.article_list[_this.article_index]['link'],function (html) {
+                $(_this.frame).append(html.title);
+                $(_this.frame).append(html.subtitle);
+                $(_this.frame).append(html.body);
                 setTimeout(function () {
-                    $(_this.frame).append(html.title);
-                    $(_this.frame).append(html.subtitle);
-                    $(_this.frame).append(html.body);
-                    setTimeout(function () {
-                        $(_this.frame).mark(_this.current_school.Name);
-                    },1000);
-
-                },500);
-            }else{
-                setTimeout(function () {
-                  _this.display_page();
-                },2000);
-            }
-
-
+                    $(_this.frame).mark(_this.current_school.Name);
+                },1000);
+            });
         },
         parseDom:function (dom) {
 //            console.log()
             var html = $(dom),
                 data = {};
-            console.log(html);
             if(html.find('body').hasClass('page-node')){
+                $(html).find('script').remove();
                 data['title'] = $(html).find('.pane-node-field-article-smarttitle') || $(html).find('.pane-node-title');
                 data['subtitle'] = $(html).find('.pane-node-summary');
                 data['body'] = $(html).find('.pane-node-body');
@@ -235,38 +270,28 @@
 
         },
         cache_article: function () {
-            var _this = this, i=0, l=_this.article_list.length, empty_id=null;
-            if(l){
-                for(i=0; i<l; i++){
-                    if(!_this.article_list[i]['results_cached'] && empty_id === null){
-                        empty_id = i;
-                        break;
+            var _this = this, i=0, l=_this.article_cache, empty_url=null;
+
+            for (var key in _this.article_cache){
+                if(!_this.article_cache[key]['results_cached']){
+                    empty_url = key;
+                    break;
+                }
+            }
+            if(empty_url !== null){
+                _this.xhr = $.ajax({
+                    url: empty_url,
+                    type: 'GET',
+                    success: function (data) {
+                        _this.article_cache[this.url]['results_cached'] = true;
+                        _this.article_cache[this.url]['cache'] = _this.parseDom(data);
+                        _this.cache_article();
+
+                    },
+                    error:function () {
+                        _this.cache_article();
                     }
-
-                }
-
-                if(empty_id !== null){
-                    var url = get_cors_url(_this.article_list[empty_id].link);
-                    _this.xhr = $.ajax({
-                        url: url,
-                        type: 'GET',
-                        success: function (data) {
-                            if(_this.article_list[empty_id]){
-                                _this.article_list[empty_id]['results_cached'] = true;
-
-//                                var html = $(data).find('#block-system-main');
-                                _this.article_list[empty_id]['cache'] = _this.parseDom(data);
-//                                console.log(_this.search_results[empty_id]['cache']);
-                            }
-                            _this.cache_article();
-
-                        },
-                        error:function () {
-                            _this.loop();
-                        }
-                    })
-                }
-
+                });
             }
         },
         init_cache_engine:function () {
@@ -277,32 +302,24 @@
             $(_this.frame).html("<h1 style='text-align: center'>Loading....</h1>");
             if(_this.school_list.length) {//if school list is not empty
                 if (!_this.current_school) {
-                    //if current school is not assigned or
-                    //pop the first element from school list and assign it to current school variable
                     _this.reset_current_school();
                 }
             }
             if(!_this.article_list.length){
                 var ai = 1;
                 var articles = [];
-
-
                 while ('Article_'+ai in _this.current_school){
 
                     if(_this.current_school['Article_'+ai]){
 
                         articles.push({
                             link:_this.current_school['Article_'+ai],
-                            results_cached : false,
-                            cache : null,
                             related : false
                         });
                     }
                     ai++;
                 }
-
                 _this.article_list = articles;
-                _this.cache_article();
             }
 
             _this.display_article();
@@ -316,7 +333,7 @@
             var ai = 1;
             var ar = 0;
             while ('Article_'+ai in _this.current_school){
-                if(_this.article_list[ai-1].related){
+                if(_this.article_list[ai-1]  && _this.article_list[ai-1].related){
                     ar++;
                 }else{
                     _this.current_school['Article_'+ai] = '';
@@ -325,13 +342,14 @@
             }
 
             _this.current_school.ReviewStatus = ar;
-
+            _this.notify(true,'i','','Saving review for '+_this.current_school.Name);
             $.ajax({
                 url: _this.sheetsu_api_root+'/UnitID/'+_this.current_school.UnitID,
                 type:'PUT',
                 data: _this.current_school,
                 success: function (data) {
-                    console.log("School updated "+data);
+                    console.log(data);
+                    _this.notify(true,'i','','Review saved for '+data[0].Name);
                 }
             })
         },
@@ -341,7 +359,13 @@
 
             if(_this.article_index + 1 ==_this.review_length){
                 this.save_school_reivew();
-                this.notify(true,'s','School review complete!');
+                this.notify(true,'s','School review complete!','Click to move to next school',{
+                    onclick:function () {
+                        console.log(this);
+                        _this.current_school = null;
+                        _this.loop();
+                    }
+                });
 
             }else{
                 this.loop();
@@ -352,7 +376,6 @@
             var yes = $('<button>').attr('title','Yes').addClass('yes').append(
                 $('<i>').addClass('fa fa-check')
             ).click(function () {
-                console.log("yes");
                 _this.update_school_review();
             });
             var no = $('<button>').attr('title','No').addClass('no').append(
@@ -367,23 +390,28 @@
             var next = $('<button>').attr('title','Next School').addClass('next').append(
                 $('<i>').addClass('fa fa-angle-double-right')
             ).click(function () {
-                _this.notify(true,'i','Moving to next school');
-                setTimeout(function () {
-                    _this.current_school = null;
-                    _this.notify(false);
-                    _this.loop();
-                },3000);
+                _this.current_school = null;
+                _this.loop();
+
             });
 
             var title = $('<p>').html("Is the article below about &ldquo;<b>"+_this.current_school.Name+" - "+_this.current_school.City+" - "+_this.current_school.State+"</b>&rdquo; ?");
-            console.log(title);
             title.append(yes).append(no).append(next);
             $(_this.question_area).empty();
             $(_this.question_area).append(title);
             _this.article_index++;
             if(_this.article_index >= _this.article_list.length){
-                _this.notify(true,'e','Article list is empty !');
-                _this.save_school_reivew();
+                _this.notify(true,'e','Article list is empty !','Click to move to next school',{
+                    onclick:function () {
+                        console.log(this);
+                        _this.current_school = null;
+                        _this.loop();
+                    }
+                });
+                if(_this.article_list.length){
+                    _this.save_school_reivew();
+                }
+
                 return false;
             }
             //pop first element from search result list
@@ -405,7 +433,10 @@
 
             $('#load').click(function () {
                 $(".input-row").slideUp();
-                _this.notify(true,'i','loading...');
+                _this.notify(true,'i','loading...','',{
+                    timeOut:0,
+                    closeButton: true
+                });
                 _this.get_school_list();
             });
 
